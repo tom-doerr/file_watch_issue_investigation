@@ -4,12 +4,12 @@
 
 **A comprehensive toolkit for diagnosing and troubleshooting file watching issues in Linux environments**
 
-[![Python 3.6+](https://img.shields.io/badge/python-3.6+-blue.svg)](https://www.python.org/downloads/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Watchdog](https://img.shields.io/badge/watchdog-3.0.0-green.svg)](https://pypi.org/project/watchdog/)
-[![PyInotify](https://img.shields.io/badge/pyinotify-0.9.6-green.svg)](https://pypi.org/project/pyinotify/)
-[![Rich](https://img.shields.io/badge/rich-13.4.2-purple.svg)](https://pypi.org/project/rich/)
-[![PSUtil](https://img.shields.io/badge/psutil-5.9.5-orange.svg)](https://pypi.org/project/psutil/)
+[![Python](https://img.shields.io/badge/Python-3.6+-4B8BBE?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/downloads/)
+[![License](https://img.shields.io/badge/License-MIT-F7DF1E?style=for-the-badge)](https://opensource.org/licenses/MIT)
+[![Watchdog](https://img.shields.io/badge/Watchdog-3.0.0-4CAF50?style=for-the-badge)](https://pypi.org/project/watchdog/)
+[![PyInotify](https://img.shields.io/badge/PyInotify-0.9.6-2196F3?style=for-the-badge)](https://pypi.org/project/pyinotify/)
+[![Rich](https://img.shields.io/badge/Rich-13.4.2-9C27B0?style=for-the-badge)](https://pypi.org/project/rich/)
+[![PSUtil](https://img.shields.io/badge/PSUtil-5.9.5-FF5722?style=for-the-badge)](https://pypi.org/project/psutil/)
 
 </div>
 
