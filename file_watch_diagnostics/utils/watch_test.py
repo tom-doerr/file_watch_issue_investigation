@@ -256,10 +256,22 @@ def run_all_library_tests(directory, duration_seconds=30, operation_interval=1.0
     results = {}
     
     # Test watchdog
-    results['watchdog'] = run_watchdog_test(directory, duration_seconds, operation_interval)
+    try:
+        results['watchdog'] = run_watchdog_test(directory, duration_seconds, operation_interval)
+    except Exception as e:
+        results['watchdog'] = {
+            'status': 'error',
+            'message': str(e)
+        }
     
     # Test pyinotify
-    results['pyinotify'] = run_pyinotify_test(directory, duration_seconds, operation_interval)
+    try:
+        results['pyinotify'] = run_pyinotify_test(directory, duration_seconds, operation_interval)
+    except Exception as e:
+        results['pyinotify'] = {
+            'status': 'error',
+            'message': str(e)
+        }
     
     return results
 

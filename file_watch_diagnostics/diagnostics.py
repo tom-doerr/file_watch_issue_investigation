@@ -21,10 +21,18 @@ from .utils.logging_utils import setup_logger, get_console, get_progress, create
 class FileWatchDiagnostics:
     """Main class for file watch diagnostics."""
     
-    def __init__(self, target_dir=None, log_dir=None, log_level="INFO"):
-        """Initialize the diagnostics tool."""
+    def __init__(self, target_dir=None, log_dir=None, log_level="INFO", testing_mode=False):
+        """Initialize the diagnostics tool.
+        
+        Args:
+            target_dir: Directory to monitor
+            log_dir: Directory to store logs
+            log_level: Logging level
+            testing_mode: If True, use shorter wait times for testing
+        """
         self.target_dir = Path(target_dir or os.getcwd()).resolve()
         self.log_dir = log_dir
+        self.testing_mode = testing_mode
         
         # Create log file
         self.log_file = create_log_filename(self.log_dir)
@@ -110,15 +118,15 @@ class FileWatchDiagnostics:
         
         system_limits = check_system_limits()
         
-        self._log_info(f"Max user watches: {system_limits['max_user_watches']}")
-        self._log_info(f"Max user instances: {system_limits['max_user_instances']}")
-        self._log_info(f"Max queued events: {system_limits['max_queued_events']}")
-        self._log_info(f"Current watches: {system_limits['current_watches']}")
+        self._log_info(f"Max user watches: {system_limits.get('max_user_watches', 'Unknown')}")
+        self._log_info(f"Max user instances: {system_limits.get('max_user_instances', 'Unknown')}")
+        self._log_info(f"Max queued events: {system_limits.get('max_queued_events', 'Unknown')}")
+        self._log_info(f"Current watches: {system_limits.get('current_watches', 'Unknown')}")
         
-        if isinstance(system_limits['watch_details'], list):
-            self._log_info(f"Top processes using inotify watches:")
-            for i, proc in enumerate(system_limits['watch_details'][:5]):
-                self._log_info(f"  {i+1}. PID {proc['pid']} ({proc['name']}): {proc['watch_count']} watches")
+        if system_limits.get('watch_per_process'):
+            self._log_info("Top processes by watch count:")
+            for proc in system_limits['watch_per_process'][:5]:
+                self._log_info(f"  {proc['name']} (PID {proc['pid']}): {proc['watches']} watches")
         
         self.results['system_limits'] = system_limits
     
@@ -128,79 +136,109 @@ class FileWatchDiagnostics:
         
         filesystem_info = get_filesystem_info(self.target_dir)
         
+        self._log_info(f"Directory: {self.target_dir}")
+        
         if isinstance(filesystem_info, dict):
-            self._log_info(f"Filesystem type: {filesystem_info['filesystem_type']}")
-            self._log_info(f"Total space: {filesystem_info['total_space_gb']:.2f} GB")
-            self._log_info(f"Free space: {filesystem_info['free_space_gb']:.2f} GB")
-            self._log_info(f"Inodes total: {filesystem_info['inodes_total']}")
-            self._log_info(f"Inodes free: {filesystem_info['inodes_free']}")
-            self._log_info(f"Max filename length: {filesystem_info['max_filename_length']}")
+            self._log_info(f"Filesystem type: {filesystem_info.get('filesystem_type', 'Unknown')}")
+            self._log_info(f"Total space: {filesystem_info.get('total_space_gb', 0):.2f} GB")
+            self._log_info(f"Free space: {filesystem_info.get('free_space_gb', 0):.2f} GB")
+            self._log_info(f"Inodes total: {filesystem_info.get('inodes_total', 'Unknown')}")
+            self._log_info(f"Inodes free: {filesystem_info.get('inodes_free', 'Unknown')}")
+            
+            # Check if filesystem is compatible with inotify
+            fs_type = filesystem_info.get('filesystem_type', '').lower()
+            incompatible_fs = ['nfs', 'cifs', 'smbfs', 'ncpfs', 'afs']
+            if any(fs in fs_type for fs in incompatible_fs):
+                self._log_warning(f"Filesystem {fs_type} may not be fully compatible with inotify")
         else:
-            self._log_error(f"Error getting filesystem info: {filesystem_info}")
+            self._log_warning(f"Error getting filesystem info: {filesystem_info}")
         
         self.results['filesystem_info'] = filesystem_info
     
     def _run_event_monitoring(self):
         """Monitor file system events."""
-        self._log_header("Monitoring File System Events")
+        self._log_section_header("Monitoring File System Events")
         
-        duration = 10  # seconds
-        self._log_info(f"Monitoring events for {duration} seconds...")
+        self._log_info("Creating and modifying test files to generate events...")
         
-        # Monitor with watchdog
-        try:
-            self._log_info("Using watchdog library...")
-            watchdog_results = monitor_events(self.target_dir, duration, 'watchdog')
-            self._log_info(f"Collected {len(watchdog_results['events'])} events")
-            self.results['event_monitoring']['watchdog'] = watchdog_results
-        except ImportError:
-            self._log_warning("watchdog library is not available")
-            self.results['event_monitoring']['watchdog'] = {
+        # Check if we're running in a test environment
+        testing_mode = self.testing_mode or 'pytest' in sys.modules
+        
+        event_results = monitor_events(self.target_dir, testing=testing_mode)
+        
+        # Check if there was an error
+        if 'error' in event_results:
+            self._log_warning(f"Error monitoring events: {event_results['error']}")
+            event_summary = {
                 'status': 'error',
-                'message': 'watchdog library is not available'
+                'message': str(event_results['error']),
+                'events_detected': 0,
+                'event_types': None,
+                'avg_latency_ms': 0.0
             }
-        except Exception as e:
-            self._log_error(f"Error monitoring with watchdog: {str(e)}")
-            self.results['event_monitoring']['watchdog'] = {
-                'status': 'error',
-                'message': str(e)
+        else:
+            # Get the stats
+            stats = event_results.get('stats', {})
+            events = event_results.get('events', [])
+            
+            # Calculate summary
+            event_count = stats.get('event_count', 0)
+            event_types = list(set(e.get('event_type') for e in events if 'event_type' in e))
+            avg_latency = stats.get('avg_latency_ms', 0.0)
+            
+            # Log the results
+            self._log_info(f"Events detected: {event_count}")
+            self._log_info(f"Event types: {event_types if event_types else None}")
+            self._log_info(f"Event latency (avg): {avg_latency:.2f} ms")
+            
+            if event_count == 0:
+                self._log_warning("No events were detected. This may indicate a problem with file watching.")
+                
+            event_summary = {
+                'status': 'warning' if event_count == 0 else 'ok',
+                'events_detected': event_count,
+                'event_types': event_types,
+                'avg_latency_ms': avg_latency
             }
         
-        # Monitor with pyinotify
-        try:
-            self._log_info("Using pyinotify library...")
-            pyinotify_results = monitor_events(self.target_dir, duration, 'pyinotify')
-            self._log_info(f"Collected {len(pyinotify_results['events'])} events")
-            self.results['event_monitoring']['pyinotify'] = pyinotify_results
-        except ImportError:
-            self._log_warning("pyinotify library is not available")
-            self.results['event_monitoring']['pyinotify'] = {
-                'status': 'error',
-                'message': 'pyinotify library is not available'
-            }
-        except Exception as e:
-            self._log_error(f"Error monitoring with pyinotify: {str(e)}")
-            self.results['event_monitoring']['pyinotify'] = {
-                'status': 'error',
-                'message': str(e)
-            }
+        # Store the results
+        self.results['event_monitoring'] = event_summary
     
     def _run_library_tests(self):
-        """Test file watching libraries."""
-        self._log_header("Testing File Watching Libraries")
+        """Run tests with different file watching libraries."""
+        self._log_section_header("Testing File Watching Libraries")
         
-        duration = 20  # seconds
-        self._log_info(f"Running tests for {duration} seconds...")
+        # Use shorter duration for testing
+        duration = 5 if self.testing_mode else 30
+        interval = 0.5 if self.testing_mode else 1.0
         
-        library_tests = run_all_library_tests(self.target_dir, duration)
-        
-        for library, results in library_tests.items():
-            if results['status'] == 'success':
-                self._log_info(f"{library}: Detected {results['events_detected']} events, missed {results['events_missed']} events")
-            else:
-                self._log_warning(f"{library}: {results.get('message', 'Unknown error')}")
-        
-        self.results['library_tests'] = library_tests
+        # Run the tests
+        try:
+            library_results = run_all_library_tests(self.target_dir, duration_seconds=duration, operation_interval=interval)
+            
+            # Log the results
+            for library, result in library_results.items():
+                status = result.get('status', 'unknown')
+                message = result.get('message', '')
+                
+                if status == 'ok':
+                    self._log_info(f"{library}: {message or 'OK'}")
+                elif status == 'error':
+                    self._log_warning(f"{library}: {message or 'Error'}")
+                else:
+                    self._log_info(f"{library}: {status} - {message}")
+            
+            # Store the results
+            self.results['library_tests'] = library_results
+            
+            return library_results
+        except Exception as e:
+            self._log_warning(f"Error running library tests: {str(e)}")
+            self.results['library_tests'] = {
+                'status': 'error',
+                'message': str(e)
+            }
+            return self.results['library_tests']
     
     def _save_results(self):
         """Save results to a JSON file."""
@@ -217,6 +255,33 @@ class FileWatchDiagnostics:
         
         self.results_file = str(path)
     
+    def save_results(self, output_file=None):
+        """Save results to a JSON file.
+        
+        Args:
+            output_file: Optional path to save results to. If not provided,
+                         a default filename will be generated.
+        
+        Returns:
+            The path to the saved file.
+        """
+        if output_file:
+            path = Path(output_file)
+        else:
+            timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+            filename = f"file_watch_diagnostics_{timestamp}.json"
+            
+            if self.log_dir:
+                path = Path(self.log_dir) / filename
+            else:
+                path = Path(filename)
+        
+        with open(path, 'w') as f:
+            json.dump(self.results, f, indent=2, default=str)
+        
+        self.results_file = str(path)
+        return self.results_file
+    
     def _log_header(self, message):
         """Log a header message."""
         self.logger.info("")
@@ -226,6 +291,16 @@ class FileWatchDiagnostics:
         
         if self.console:
             self.console.print(f"\n[bold cyan]{message}[/bold cyan]")
+    
+    def _log_section_header(self, message):
+        """Log a section header."""
+        separator = "=" * 70
+        self.logger.info(separator)
+        self.logger.info(message)
+        self.logger.info(separator)
+        
+        if self.console:
+            self.console.print(f"\n[bold]{message}[/bold]")
     
     def _log_info(self, message):
         """Log an info message."""
@@ -251,19 +326,20 @@ class FileWatchDiagnostics:
 
 def main():
     """Main entry point."""
+    import argparse
+    
     parser = argparse.ArgumentParser(description="File Watch Diagnostics Tool")
-    parser.add_argument("directory", nargs="?", default=None, 
-                        help="Directory to monitor (default: current directory)")
-    parser.add_argument("--log-dir", "-l", default=None,
-                        help="Directory to store log files (default: current directory)")
-    parser.add_argument("--log-level", "-v", default="INFO",
-                        choices=["DEBUG", "INFO", "WARNING", "ERROR"],
-                        help="Log level (default: INFO)")
+    parser.add_argument("directory", nargs="?", default=None, help="Directory to monitor")
+    parser.add_argument("--log-dir", help="Directory to store log files")
+    parser.add_argument("--log-level", choices=["DEBUG", "INFO", "WARNING", "ERROR"], default="INFO", help="Log level")
+    parser.add_argument("--testing-mode", action="store_true", help="Use shorter wait times for testing")
     
     args = parser.parse_args()
     
-    diagnostics = FileWatchDiagnostics(args.directory, args.log_dir, args.log_level)
-    diagnostics.run_all_diagnostics()
+    diagnostics = FileWatchDiagnostics(args.directory, args.log_dir, args.log_level, args.testing_mode)
+    results = diagnostics.run_all_diagnostics()
+    
+    return 0
 
 
 if __name__ == "__main__":

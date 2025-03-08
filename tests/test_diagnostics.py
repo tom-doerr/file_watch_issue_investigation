@@ -109,38 +109,27 @@ def test_run_filesystem_info_check():
 def test_run_event_monitoring():
     """Test running event monitoring."""
     with tempfile.TemporaryDirectory() as temp_dir:
-        # Mock the create_log_filename function to return a known value
-        log_file = os.path.join(temp_dir, "test.log")
-        with mock.patch("file_watch_diagnostics.diagnostics.create_log_filename", return_value=log_file):
-            # Mock the monitor_events function to return known values
-            watchdog_results = {
-                "stats": {"events_count": 10},
-                "events": [{"event": 1}, {"event": 2}]
-            }
-            pyinotify_results = {
-                "stats": {"events_count": 12},
-                "events": [{"event": 3}, {"event": 4}]
-            }
+        # Mock the monitor_events function
+        event_results = {
+            "stats": {"event_count": 5},
+            "events": [{"event_type": "created"}, {"event_type": "modified"}]
+        }
+        
+        def mock_monitor_events(directory, testing=False):
+            return event_results
+        
+        with mock.patch("file_watch_diagnostics.diagnostics.monitor_events", side_effect=mock_monitor_events):
+            # Initialize the diagnostics class
+            diagnostics = FileWatchDiagnostics(target_dir=temp_dir)
             
-            def mock_monitor_events(path, duration, library):
-                if library == "watchdog":
-                    return watchdog_results
-                elif library == "pyinotify":
-                    return pyinotify_results
+            # Run event monitoring
+            diagnostics._run_event_monitoring()
             
-            with mock.patch("file_watch_diagnostics.diagnostics.monitor_events", side_effect=mock_monitor_events):
-                # Initialize the diagnostics class
-                diagnostics = FileWatchDiagnostics(target_dir=temp_dir)
-                
-                # Run event monitoring
-                diagnostics._run_event_monitoring()
-                
-                # Check that the results were updated
-                assert "event_monitoring" in diagnostics.results
-                assert "watchdog" in diagnostics.results["event_monitoring"]
-                assert "pyinotify" in diagnostics.results["event_monitoring"]
-                assert diagnostics.results["event_monitoring"]["watchdog"] == watchdog_results
-                assert diagnostics.results["event_monitoring"]["pyinotify"] == pyinotify_results
+            # Check that the results were updated
+            assert "event_monitoring" in diagnostics.results
+            assert diagnostics.results["event_monitoring"]["status"] == "ok"
+            assert diagnostics.results["event_monitoring"]["events_detected"] == 5
+            assert set(diagnostics.results["event_monitoring"]["event_types"]) == {"created", "modified"}
 
 
 def test_run_library_tests():

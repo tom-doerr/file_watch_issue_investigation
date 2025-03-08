@@ -1,0 +1,571 @@
+{
+  "timestamp": "2025-03-08 02:47:32.816881",
+  "target_directory": "/tmp",
+  "system_info": {
+    "platform": "Linux-5.15.0-131-generic-x86_64-with-glibc2.31",
+    "python_version": "3.11.10",
+    "processor": "x86_64",
+    "cpu_count": 24,
+    "memory_total_gb": 62.72992706298828,
+    "memory_available_gb": 11.90835952758789
+  },
+  "system_limits": {
+    "max_user_watches": 524288,
+    "max_user_instances": 512,
+    "max_queued_events": 16384,
+    "current_watches": 99,
+    "watch_details": [
+      {
+        "pid": 933744,
+        "name": "windsurf",
+        "cmdline": "/usr/share/windsurf/windsurf /home/tom/git/dummy_2",
+        "watch_count": 3
+      },
+      {
+        "pid": 2656,
+        "name": "systemd",
+        "cmdline": "/lib/systemd/systemd --user",
+        "watch_count": 3
+      },
+      {
+        "pid": 938553,
+        "name": "windsurf",
+        "cmdline": "/usr/share/windsurf/windsurf --type=utility --utility-sub-type=node.mojom.NodeService --lang=en-US --service-sandbox-type=none --crashpad-handler-pid=934350 --enable-crash-reporter=c2983ffc-6b74-4bad-9777-4d3d87b033d0,no_channel --user-data-dir=/home/tom/.config/Windsurf --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file --cors-schemes=vscode-webview,vscode-file --fetch-schemes=vscode-webview,vscode-file --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --shared-files=v8_context_snapshot_data:100 --field-trial-handle=3,i,5385239863327426483,2382334861410463600,262144 --enable-features=kWebSQLAccess --disable-features=CalculateNativeWinOcclusion,SpareRendererForSitePerProcess --variations-seed-version",
+        "watch_count": 2
+      },
+      {
+        "pid": 938551,
+        "name": "windsurf",
+        "cmdline": "/usr/share/windsurf/windsurf --type=utility --utility-sub-type=node.mojom.NodeService --lang=en-US --service-sandbox-type=none --crashpad-handler-pid=934350 --enable-crash-reporter=c2983ffc-6b74-4bad-9777-4d3d87b033d0,no_channel --user-data-dir=/home/tom/.config/Windsurf --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file --cors-schemes=vscode-webview,vscode-file --fetch-schemes=vscode-webview,vscode-file --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --shared-files=v8_context_snapshot_data:100 --field-trial-handle=3,i,5385239863327426483,2382334861410463600,262144 --enable-features=kWebSQLAccess --disable-features=CalculateNativeWinOcclusion,SpareRendererForSitePerProcess --variations-seed-version",
+        "watch_count": 2
+      },
+      {
+        "pid": 938191,
+        "name": "windsurf",
+        "cmdline": "/usr/share/windsurf/windsurf --type=utility --utility-sub-type=node.mojom.NodeService --lang=en-US --service-sandbox-type=none --crashpad-handler-pid=934350 --enable-crash-reporter=c2983ffc-6b74-4bad-9777-4d3d87b033d0,no_channel --user-data-dir=/home/tom/.config/Windsurf --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file --cors-schemes=vscode-webview,vscode-file --fetch-schemes=vscode-webview,vscode-file --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --shared-files=v8_context_snapshot_data:100 --field-trial-handle=3,i,5385239863327426483,2382334861410463600,262144 --enable-features=kWebSQLAccess --disable-features=CalculateNativeWinOcclusion,SpareRendererForSitePerProcess --variations-seed-version",
+        "watch_count": 2
+      },
+      {
+        "pid": 938167,
+        "name": "windsurf",
+        "cmdline": "/usr/share/windsurf/windsurf --type=utility --utility-sub-type=node.mojom.NodeService --lang=en-US --service-sandbox-type=none --crashpad-handler-pid=934350 --enable-crash-reporter=c2983ffc-6b74-4bad-9777-4d3d87b033d0,no_channel --user-data-dir=/home/tom/.config/Windsurf --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file --cors-schemes=vscode-webview,vscode-file --fetch-schemes=vscode-webview,vscode-file --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --shared-files=v8_context_snapshot_data:100 --field-trial-handle=3,i,5385239863327426483,2382334861410463600,262144 --enable-features=kWebSQLAccess --disable-features=CalculateNativeWinOcclusion,SpareRendererForSitePerProcess --variations-seed-version",
+        "watch_count": 2
+      },
+      {
+        "pid": 938124,
+        "name": "windsurf",
+        "cmdline": "/usr/share/windsurf/windsurf --type=utility --utility-sub-type=node.mojom.NodeService --lang=en-US --service-sandbox-type=none --crashpad-handler-pid=934350 --enable-crash-reporter=c2983ffc-6b74-4bad-9777-4d3d87b033d0,no_channel --user-data-dir=/home/tom/.config/Windsurf --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file --cors-schemes=vscode-webview,vscode-file --fetch-schemes=vscode-webview,vscode-file --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --shared-files=v8_context_snapshot_data:100 --field-trial-handle=3,i,5385239863327426483,2382334861410463600,262144 --enable-features=kWebSQLAccess --disable-features=CalculateNativeWinOcclusion,SpareRendererForSitePerProcess --variations-seed-version",
+        "watch_count": 2
+      },
+      {
+        "pid": 938105,
+        "name": "windsurf",
+        "cmdline": "/usr/share/windsurf/windsurf --type=utility --utility-sub-type=node.mojom.NodeService --lang=en-US --service-sandbox-type=none --crashpad-handler-pid=934350 --enable-crash-reporter=c2983ffc-6b74-4bad-9777-4d3d87b033d0,no_channel --user-data-dir=/home/tom/.config/Windsurf --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file --cors-schemes=vscode-webview,vscode-file --fetch-schemes=vscode-webview,vscode-file --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --shared-files=v8_context_snapshot_data:100 --field-trial-handle=3,i,5385239863327426483,2382334861410463600,262144 --enable-features=kWebSQLAccess --disable-features=CalculateNativeWinOcclusion,SpareRendererForSitePerProcess --variations-seed-version",
+        "watch_count": 2
+      },
+      {
+        "pid": 938091,
+        "name": "windsurf",
+        "cmdline": "/usr/share/windsurf/windsurf --type=utility --utility-sub-type=node.mojom.NodeService --lang=en-US --service-sandbox-type=none --crashpad-handler-pid=934350 --enable-crash-reporter=c2983ffc-6b74-4bad-9777-4d3d87b033d0,no_channel --user-data-dir=/home/tom/.config/Windsurf --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file --cors-schemes=vscode-webview,vscode-file --fetch-schemes=vscode-webview,vscode-file --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --shared-files=v8_context_snapshot_data:100 --field-trial-handle=3,i,5385239863327426483,2382334861410463600,262144 --enable-features=kWebSQLAccess --disable-features=CalculateNativeWinOcclusion,SpareRendererForSitePerProcess --variations-seed-version",
+        "watch_count": 2
+      },
+      {
+        "pid": 938081,
+        "name": "windsurf",
+        "cmdline": "/usr/share/windsurf/windsurf --type=utility --utility-sub-type=node.mojom.NodeService --lang=en-US --service-sandbox-type=none --crashpad-handler-pid=934350 --enable-crash-reporter=c2983ffc-6b74-4bad-9777-4d3d87b033d0,no_channel --user-data-dir=/home/tom/.config/Windsurf --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file --cors-schemes=vscode-webview,vscode-file --fetch-schemes=vscode-webview,vscode-file --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --shared-files=v8_context_snapshot_data:100 --field-trial-handle=3,i,5385239863327426483,2382334861410463600,262144 --enable-features=kWebSQLAccess --disable-features=CalculateNativeWinOcclusion,SpareRendererForSitePerProcess --variations-seed-version",
+        "watch_count": 2
+      },
+      {
+        "pid": 938072,
+        "name": "windsurf",
+        "cmdline": "/usr/share/windsurf/windsurf --type=utility --utility-sub-type=node.mojom.NodeService --lang=en-US --service-sandbox-type=none --crashpad-handler-pid=934350 --enable-crash-reporter=c2983ffc-6b74-4bad-9777-4d3d87b033d0,no_channel --user-data-dir=/home/tom/.config/Windsurf --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file --cors-schemes=vscode-webview,vscode-file --fetch-schemes=vscode-webview,vscode-file --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --shared-files=v8_context_snapshot_data:100 --field-trial-handle=3,i,5385239863327426483,2382334861410463600,262144 --enable-features=kWebSQLAccess --disable-features=CalculateNativeWinOcclusion,SpareRendererForSitePerProcess --variations-seed-version",
+        "watch_count": 2
+      },
+      {
+        "pid": 938047,
+        "name": "windsurf",
+        "cmdline": "/usr/share/windsurf/windsurf --type=utility --utility-sub-type=node.mojom.NodeService --lang=en-US --service-sandbox-type=none --crashpad-handler-pid=934350 --enable-crash-reporter=c2983ffc-6b74-4bad-9777-4d3d87b033d0,no_channel --user-data-dir=/home/tom/.config/Windsurf --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file --cors-schemes=vscode-webview,vscode-file --fetch-schemes=vscode-webview,vscode-file --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --shared-files=v8_context_snapshot_data:100 --field-trial-handle=3,i,5385239863327426483,2382334861410463600,262144 --enable-features=kWebSQLAccess --disable-features=CalculateNativeWinOcclusion,SpareRendererForSitePerProcess --variations-seed-version",
+        "watch_count": 2
+      },
+      {
+        "pid": 938024,
+        "name": "windsurf",
+        "cmdline": "/usr/share/windsurf/windsurf --type=utility --utility-sub-type=node.mojom.NodeService --lang=en-US --service-sandbox-type=none --crashpad-handler-pid=934350 --enable-crash-reporter=c2983ffc-6b74-4bad-9777-4d3d87b033d0,no_channel --user-data-dir=/home/tom/.config/Windsurf --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file --cors-schemes=vscode-webview,vscode-file --fetch-schemes=vscode-webview,vscode-file --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --shared-files=v8_context_snapshot_data:100 --field-trial-handle=3,i,5385239863327426483,2382334861410463600,262144 --enable-features=kWebSQLAccess --disable-features=CalculateNativeWinOcclusion,SpareRendererForSitePerProcess --variations-seed-version",
+        "watch_count": 2
+      },
+      {
+        "pid": 938019,
+        "name": "windsurf",
+        "cmdline": "/usr/share/windsurf/windsurf --type=utility --utility-sub-type=node.mojom.NodeService --lang=en-US --service-sandbox-type=none --crashpad-handler-pid=934350 --enable-crash-reporter=c2983ffc-6b74-4bad-9777-4d3d87b033d0,no_channel --user-data-dir=/home/tom/.config/Windsurf --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file --cors-schemes=vscode-webview,vscode-file --fetch-schemes=vscode-webview,vscode-file --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --shared-files=v8_context_snapshot_data:100 --field-trial-handle=3,i,5385239863327426483,2382334861410463600,262144 --enable-features=kWebSQLAccess --disable-features=CalculateNativeWinOcclusion,SpareRendererForSitePerProcess --variations-seed-version",
+        "watch_count": 2
+      },
+      {
+        "pid": 938004,
+        "name": "windsurf",
+        "cmdline": "/usr/share/windsurf/windsurf --type=utility --utility-sub-type=node.mojom.NodeService --lang=en-US --service-sandbox-type=none --crashpad-handler-pid=934350 --enable-crash-reporter=c2983ffc-6b74-4bad-9777-4d3d87b033d0,no_channel --user-data-dir=/home/tom/.config/Windsurf --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file --cors-schemes=vscode-webview,vscode-file --fetch-schemes=vscode-webview,vscode-file --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --shared-files=v8_context_snapshot_data:100 --field-trial-handle=3,i,5385239863327426483,2382334861410463600,262144 --enable-features=kWebSQLAccess --disable-features=CalculateNativeWinOcclusion,SpareRendererForSitePerProcess --variations-seed-version",
+        "watch_count": 2
+      },
+      {
+        "pid": 937992,
+        "name": "windsurf",
+        "cmdline": "/usr/share/windsurf/windsurf --type=utility --utility-sub-type=node.mojom.NodeService --lang=en-US --service-sandbox-type=none --crashpad-handler-pid=934350 --enable-crash-reporter=c2983ffc-6b74-4bad-9777-4d3d87b033d0,no_channel --user-data-dir=/home/tom/.config/Windsurf --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file --cors-schemes=vscode-webview,vscode-file --fetch-schemes=vscode-webview,vscode-file --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --shared-files=v8_context_snapshot_data:100 --field-trial-handle=3,i,5385239863327426483,2382334861410463600,262144 --enable-features=kWebSQLAccess --disable-features=CalculateNativeWinOcclusion,SpareRendererForSitePerProcess --variations-seed-version",
+        "watch_count": 2
+      },
+      {
+        "pid": 937980,
+        "name": "windsurf",
+        "cmdline": "/usr/share/windsurf/windsurf --type=utility --utility-sub-type=node.mojom.NodeService --lang=en-US --service-sandbox-type=none --crashpad-handler-pid=934350 --enable-crash-reporter=c2983ffc-6b74-4bad-9777-4d3d87b033d0,no_channel --user-data-dir=/home/tom/.config/Windsurf --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file --cors-schemes=vscode-webview,vscode-file --fetch-schemes=vscode-webview,vscode-file --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --shared-files=v8_context_snapshot_data:100 --field-trial-handle=3,i,5385239863327426483,2382334861410463600,262144 --enable-features=kWebSQLAccess --disable-features=CalculateNativeWinOcclusion,SpareRendererForSitePerProcess --variations-seed-version",
+        "watch_count": 2
+      },
+      {
+        "pid": 937971,
+        "name": "windsurf",
+        "cmdline": "/usr/share/windsurf/windsurf --type=utility --utility-sub-type=node.mojom.NodeService --lang=en-US --service-sandbox-type=none --crashpad-handler-pid=934350 --enable-crash-reporter=c2983ffc-6b74-4bad-9777-4d3d87b033d0,no_channel --user-data-dir=/home/tom/.config/Windsurf --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file --cors-schemes=vscode-webview,vscode-file --fetch-schemes=vscode-webview,vscode-file --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --shared-files=v8_context_snapshot_data:100 --field-trial-handle=3,i,5385239863327426483,2382334861410463600,262144 --enable-features=kWebSQLAccess --disable-features=CalculateNativeWinOcclusion,SpareRendererForSitePerProcess --variations-seed-version",
+        "watch_count": 2
+      },
+      {
+        "pid": 937960,
+        "name": "windsurf",
+        "cmdline": "/usr/share/windsurf/windsurf --type=utility --utility-sub-type=node.mojom.NodeService --lang=en-US --service-sandbox-type=none --crashpad-handler-pid=934350 --enable-crash-reporter=c2983ffc-6b74-4bad-9777-4d3d87b033d0,no_channel --user-data-dir=/home/tom/.config/Windsurf --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file --cors-schemes=vscode-webview,vscode-file --fetch-schemes=vscode-webview,vscode-file --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --shared-files=v8_context_snapshot_data:100 --field-trial-handle=3,i,5385239863327426483,2382334861410463600,262144 --enable-features=kWebSQLAccess --disable-features=CalculateNativeWinOcclusion,SpareRendererForSitePerProcess --variations-seed-version",
+        "watch_count": 2
+      },
+      {
+        "pid": 937952,
+        "name": "windsurf",
+        "cmdline": "/usr/share/windsurf/windsurf --type=utility --utility-sub-type=node.mojom.NodeService --lang=en-US --service-sandbox-type=none --crashpad-handler-pid=934350 --enable-crash-reporter=c2983ffc-6b74-4bad-9777-4d3d87b033d0,no_channel --user-data-dir=/home/tom/.config/Windsurf --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file --cors-schemes=vscode-webview,vscode-file --fetch-schemes=vscode-webview,vscode-file --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --shared-files=v8_context_snapshot_data:100 --field-trial-handle=3,i,5385239863327426483,2382334861410463600,262144 --enable-features=kWebSQLAccess --disable-features=CalculateNativeWinOcclusion,SpareRendererForSitePerProcess --variations-seed-version",
+        "watch_count": 2
+      },
+      {
+        "pid": 937942,
+        "name": "windsurf",
+        "cmdline": "/usr/share/windsurf/windsurf --type=utility --utility-sub-type=node.mojom.NodeService --lang=en-US --service-sandbox-type=none --crashpad-handler-pid=934350 --enable-crash-reporter=c2983ffc-6b74-4bad-9777-4d3d87b033d0,no_channel --user-data-dir=/home/tom/.config/Windsurf --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file --cors-schemes=vscode-webview,vscode-file --fetch-schemes=vscode-webview,vscode-file --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --shared-files=v8_context_snapshot_data:100 --field-trial-handle=3,i,5385239863327426483,2382334861410463600,262144 --enable-features=kWebSQLAccess --disable-features=CalculateNativeWinOcclusion,SpareRendererForSitePerProcess --variations-seed-version",
+        "watch_count": 2
+      },
+      {
+        "pid": 937828,
+        "name": "windsurf",
+        "cmdline": "/usr/share/windsurf/windsurf --type=utility --utility-sub-type=node.mojom.NodeService --lang=en-US --service-sandbox-type=none --crashpad-handler-pid=934350 --enable-crash-reporter=c2983ffc-6b74-4bad-9777-4d3d87b033d0,no_channel --user-data-dir=/home/tom/.config/Windsurf --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file --cors-schemes=vscode-webview,vscode-file --fetch-schemes=vscode-webview,vscode-file --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --shared-files=v8_context_snapshot_data:100 --field-trial-handle=3,i,5385239863327426483,2382334861410463600,262144 --enable-features=kWebSQLAccess --disable-features=CalculateNativeWinOcclusion,SpareRendererForSitePerProcess --variations-seed-version",
+        "watch_count": 2
+      },
+      {
+        "pid": 937205,
+        "name": "windsurf",
+        "cmdline": "/usr/share/windsurf/windsurf --type=utility --utility-sub-type=node.mojom.NodeService --lang=en-US --service-sandbox-type=none --crashpad-handler-pid=934350 --enable-crash-reporter=c2983ffc-6b74-4bad-9777-4d3d87b033d0,no_channel --user-data-dir=/home/tom/.config/Windsurf --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file --cors-schemes=vscode-webview,vscode-file --fetch-schemes=vscode-webview,vscode-file --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --shared-files=v8_context_snapshot_data:100 --field-trial-handle=3,i,5385239863327426483,2382334861410463600,262144 --enable-features=kWebSQLAccess --disable-features=CalculateNativeWinOcclusion,SpareRendererForSitePerProcess --variations-seed-version",
+        "watch_count": 2
+      },
+      {
+        "pid": 2743,
+        "name": "pulseaudio",
+        "cmdline": "/usr/bin/pulseaudio --daemonize=no --log-target=journal",
+        "watch_count": 2
+      },
+      {
+        "pid": 2213942,
+        "name": "windsurf",
+        "cmdline": "/usr/share/windsurf/windsurf --type=utility --utility-sub-type=node.mojom.NodeService --lang=en-US --service-sandbox-type=none --crashpad-handler-pid=934350 --enable-crash-reporter=c2983ffc-6b74-4bad-9777-4d3d87b033d0,no_channel --user-data-dir=/home/tom/.config/Windsurf --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file --cors-schemes=vscode-webview,vscode-file --fetch-schemes=vscode-webview,vscode-file --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --shared-files=v8_context_snapshot_data:100 --field-trial-handle=3,i,5385239863327426483,2382334861410463600,262144 --enable-features=kWebSQLAccess --disable-features=CalculateNativeWinOcclusion,SpareRendererForSitePerProcess --variations-seed-version",
+        "watch_count": 2
+      },
+      {
+        "pid": 2213923,
+        "name": "windsurf",
+        "cmdline": "/usr/share/windsurf/windsurf --type=utility --utility-sub-type=node.mojom.NodeService --lang=en-US --service-sandbox-type=none --crashpad-handler-pid=934350 --enable-crash-reporter=c2983ffc-6b74-4bad-9777-4d3d87b033d0,no_channel --user-data-dir=/home/tom/.config/Windsurf --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file --cors-schemes=vscode-webview,vscode-file --fetch-schemes=vscode-webview,vscode-file --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --shared-files=v8_context_snapshot_data:100 --field-trial-handle=3,i,5385239863327426483,2382334861410463600,262144 --enable-features=kWebSQLAccess --disable-features=CalculateNativeWinOcclusion,SpareRendererForSitePerProcess --variations-seed-version",
+        "watch_count": 2
+      },
+      {
+        "pid": 2175539,
+        "name": "windsurf",
+        "cmdline": "/usr/share/windsurf/windsurf --type=utility --utility-sub-type=node.mojom.NodeService --lang=en-US --service-sandbox-type=none --crashpad-handler-pid=934350 --enable-crash-reporter=c2983ffc-6b74-4bad-9777-4d3d87b033d0,no_channel --user-data-dir=/home/tom/.config/Windsurf --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file --cors-schemes=vscode-webview,vscode-file --fetch-schemes=vscode-webview,vscode-file --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --shared-files=v8_context_snapshot_data:100 --field-trial-handle=3,i,5385239863327426483,2382334861410463600,262144 --enable-features=kWebSQLAccess --disable-features=CalculateNativeWinOcclusion,SpareRendererForSitePerProcess --variations-seed-version",
+        "watch_count": 2
+      },
+      {
+        "pid": 2175525,
+        "name": "windsurf",
+        "cmdline": "/usr/share/windsurf/windsurf --type=utility --utility-sub-type=node.mojom.NodeService --lang=en-US --service-sandbox-type=none --crashpad-handler-pid=934350 --enable-crash-reporter=c2983ffc-6b74-4bad-9777-4d3d87b033d0,no_channel --user-data-dir=/home/tom/.config/Windsurf --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file --cors-schemes=vscode-webview,vscode-file --fetch-schemes=vscode-webview,vscode-file --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --shared-files=v8_context_snapshot_data:100 --field-trial-handle=3,i,5385239863327426483,2382334861410463600,262144 --enable-features=kWebSQLAccess --disable-features=CalculateNativeWinOcclusion,SpareRendererForSitePerProcess --variations-seed-version",
+        "watch_count": 2
+      },
+      {
+        "pid": 2175021,
+        "name": "windsurf",
+        "cmdline": "/usr/share/windsurf/windsurf --type=utility --utility-sub-type=node.mojom.NodeService --lang=en-US --service-sandbox-type=none --crashpad-handler-pid=934350 --enable-crash-reporter=c2983ffc-6b74-4bad-9777-4d3d87b033d0,no_channel --user-data-dir=/home/tom/.config/Windsurf --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file --cors-schemes=vscode-webview,vscode-file --fetch-schemes=vscode-webview,vscode-file --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --shared-files=v8_context_snapshot_data:100 --field-trial-handle=3,i,5385239863327426483,2382334861410463600,262144 --enable-features=kWebSQLAccess --disable-features=CalculateNativeWinOcclusion,SpareRendererForSitePerProcess --variations-seed-version",
+        "watch_count": 2
+      },
+      {
+        "pid": 2174833,
+        "name": "windsurf",
+        "cmdline": "/usr/share/windsurf/windsurf --type=utility --utility-sub-type=node.mojom.NodeService --lang=en-US --service-sandbox-type=none --crashpad-handler-pid=934350 --enable-crash-reporter=c2983ffc-6b74-4bad-9777-4d3d87b033d0,no_channel --user-data-dir=/home/tom/.config/Windsurf --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file --cors-schemes=vscode-webview,vscode-file --fetch-schemes=vscode-webview,vscode-file --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --shared-files=v8_context_snapshot_data:100 --field-trial-handle=3,i,5385239863327426483,2382334861410463600,262144 --enable-features=kWebSQLAccess --disable-features=CalculateNativeWinOcclusion,SpareRendererForSitePerProcess --variations-seed-version",
+        "watch_count": 2
+      },
+      {
+        "pid": 1679419,
+        "name": "chrome",
+        "cmdline": "/snap/chromium/3051/usr/lib/chromium-browser/chrome --password-store=basic --disable-features=TFLiteLanguageDetectionEnabled",
+        "watch_count": 2
+      },
+      {
+        "pid": 96008,
+        "name": "goa-identity-service",
+        "cmdline": "/usr/libexec/goa-identity-service",
+        "watch_count": 1
+      },
+      {
+        "pid": 95957,
+        "name": "goa-daemon",
+        "cmdline": "/usr/libexec/goa-daemon",
+        "watch_count": 1
+      },
+      {
+        "pid": 95937,
+        "name": "gvfs-afc-volume-monitor",
+        "cmdline": "/usr/libexec/gvfs-afc-volume-monitor",
+        "watch_count": 1
+      },
+      {
+        "pid": 95808,
+        "name": "gvfs-udisks2-volume-monitor",
+        "cmdline": "/usr/libexec/gvfs-udisks2-volume-monitor",
+        "watch_count": 1
+      },
+      {
+        "pid": 944461,
+        "name": "language_server_linux_x64",
+        "cmdline": "/usr/share/windsurf/resources/app/extensions/windsurf/bin/language_server_linux_x64 --api_server_url https://server.codeium.com --run_child --enable_lsp --extension_server_port 36953 --ide_name windsurf --random_port --inference_api_server_url https://inference.codeium.com --database_dir /home/tom/.codeium/windsurf/database/9c0694567290725d9dcba14ade58e297 --enable_index_service --enable_local_search --search_max_workspace_file_count 5000 --indexed_files_retention_period_days 30 --workspace_id file_home_tom_git_x_twitter --sentry_telemetry --sentry_environment stable --codeium_dir .codeium/windsurf --parent_pipe_path /tmp/server_adc5352ee7657c66 --windsurf_version 1.3.11",
+        "watch_count": 1
+      },
+      {
+        "pid": 942947,
+        "name": "language_server_linux_x64",
+        "cmdline": "/usr/share/windsurf/resources/app/extensions/windsurf/bin/language_server_linux_x64 --api_server_url https://server.codeium.com --run_child --enable_lsp --extension_server_port 42777 --ide_name windsurf --random_port --inference_api_server_url https://inference.codeium.com --database_dir /home/tom/.codeium/windsurf/database/9c0694567290725d9dcba14ade58e297 --enable_index_service --enable_local_search --search_max_workspace_file_count 5000 --indexed_files_retention_period_days 30 --workspace_id file_home_tom_git_dspy_multi_agent --sentry_telemetry --sentry_environment stable --codeium_dir .codeium/windsurf --parent_pipe_path /tmp/server_4a20178995f66871 --windsurf_version 1.3.11",
+        "watch_count": 1
+      },
+      {
+        "pid": 942737,
+        "name": "language_server_linux_x64",
+        "cmdline": "/usr/share/windsurf/resources/app/extensions/windsurf/bin/language_server_linux_x64 --api_server_url https://server.codeium.com --run_child --enable_lsp --extension_server_port 37045 --ide_name windsurf --random_port --inference_api_server_url https://inference.codeium.com --database_dir /home/tom/.codeium/windsurf/database/9c0694567290725d9dcba14ade58e297 --enable_index_service --enable_local_search --search_max_workspace_file_count 5000 --indexed_files_retention_period_days 30 --workspace_id file_home_tom_git_dspy_elo --sentry_telemetry --sentry_environment stable --codeium_dir .codeium/windsurf --parent_pipe_path /tmp/server_ac984a74c03fc2c9 --windsurf_version 1.3.11",
+        "watch_count": 1
+      },
+      {
+        "pid": 941649,
+        "name": "language_server_linux_x64",
+        "cmdline": "/usr/share/windsurf/resources/app/extensions/windsurf/bin/language_server_linux_x64 --api_server_url https://server.codeium.com --run_child --enable_lsp --extension_server_port 36459 --ide_name windsurf --random_port --inference_api_server_url https://inference.codeium.com --database_dir /home/tom/.codeium/windsurf/database/9c0694567290725d9dcba14ade58e297 --enable_index_service --enable_local_search --search_max_workspace_file_count 5000 --indexed_files_retention_period_days 30 --workspace_id file_home_tom_git_radical_web --sentry_telemetry --sentry_environment stable --codeium_dir .codeium/windsurf --parent_pipe_path /tmp/server_93269ceb96d0e7de --windsurf_version 1.3.11",
+        "watch_count": 1
+      },
+      {
+        "pid": 940978,
+        "name": "language_server_linux_x64",
+        "cmdline": "/usr/share/windsurf/resources/app/extensions/windsurf/bin/language_server_linux_x64 --api_server_url https://server.codeium.com --run_child --enable_lsp --extension_server_port 41735 --ide_name windsurf --random_port --inference_api_server_url https://inference.codeium.com --database_dir /home/tom/.codeium/windsurf/database/9c0694567290725d9dcba14ade58e297 --enable_index_service --enable_local_search --search_max_workspace_file_count 5000 --indexed_files_retention_period_days 30 --workspace_id file_home_tom_git_file_watch_issue_investigation --sentry_telemetry --sentry_environment stable --codeium_dir .codeium/windsurf --parent_pipe_path /tmp/server_4e846cee21203e8e --windsurf_version 1.3.11",
+        "watch_count": 1
+      },
+      {
+        "pid": 937201,
+        "name": "windsurf",
+        "cmdline": "/usr/share/windsurf/windsurf --type=utility --utility-sub-type=node.mojom.NodeService --lang=en-US --service-sandbox-type=none --crashpad-handler-pid=934350 --enable-crash-reporter=c2983ffc-6b74-4bad-9777-4d3d87b033d0,no_channel --user-data-dir=/home/tom/.config/Windsurf --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file --cors-schemes=vscode-webview,vscode-file --fetch-schemes=vscode-webview,vscode-file --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --shared-files=v8_context_snapshot_data:100 --field-trial-handle=3,i,5385239863327426483,2382334861410463600,262144 --enable-features=kWebSQLAccess --disable-features=CalculateNativeWinOcclusion,SpareRendererForSitePerProcess --variations-seed-version",
+        "watch_count": 1
+      },
+      {
+        "pid": 935067,
+        "name": "windsurf",
+        "cmdline": "/usr/share/windsurf/windsurf --type=utility --utility-sub-type=network.mojom.NetworkService --lang=en-US --service-sandbox-type=none --crashpad-handler-pid=934350 --enable-crash-reporter=c2983ffc-6b74-4bad-9777-4d3d87b033d0,no_channel --user-data-dir=/home/tom/.config/Windsurf --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file --cors-schemes=vscode-webview,vscode-file --fetch-schemes=vscode-webview,vscode-file --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --shared-files=v8_context_snapshot_data:100 --field-trial-handle=3,i,5385239863327426483,2382334861410463600,262144 --enable-features=kWebSQLAccess --disable-features=CalculateNativeWinOcclusion,SpareRendererForSitePerProcess --variations-seed-version",
+        "watch_count": 1
+      },
+      {
+        "pid": 8837,
+        "name": "picom",
+        "cmdline": "picom -b",
+        "watch_count": 1
+      },
+      {
+        "pid": 8752,
+        "name": "dbus-daemon",
+        "cmdline": "/usr/bin/dbus-daemon --config-file=/usr/share/defaults/at-spi2/accessibility.conf --nofork --print-address 3",
+        "watch_count": 1
+      },
+      {
+        "pid": 85674,
+        "name": "xdg-desktop-portal-gtk",
+        "cmdline": "/usr/libexec/xdg-desktop-portal-gtk",
+        "watch_count": 1
+      },
+      {
+        "pid": 85623,
+        "name": "xdg-desktop-portal",
+        "cmdline": "/usr/libexec/xdg-desktop-portal",
+        "watch_count": 1
+      },
+      {
+        "pid": 44486,
+        "name": "node",
+        "cmdline": "/home/tom/.nvm/versions/node/v18.20.5/bin/node /home/tom/git/cont_7/node_modules/next/dist/compiled/jest-worker/processChild.js",
+        "watch_count": 1
+      },
+      {
+        "pid": 44485,
+        "name": "node",
+        "cmdline": "/home/tom/.nvm/versions/node/v18.20.5/bin/node /home/tom/git/cont_7/node_modules/next/dist/compiled/jest-worker/processChild.js",
+        "watch_count": 1
+      },
+      {
+        "pid": 43956,
+        "name": "node",
+        "cmdline": "/home/tom/.nvm/versions/node/v18.20.5/bin/node /home/tom/git/cont_7/node_modules/next/dist/compiled/jest-worker/processChild.js",
+        "watch_count": 1
+      },
+      {
+        "pid": 43506,
+        "name": "node",
+        "cmdline": "node /home/tom/git/cont_7/node_modules/.bin/next dev -p 7007",
+        "watch_count": 1
+      },
+      {
+        "pid": 3594901,
+        "name": "node",
+        "cmdline": "node /home/tom/git/svelte_test/frontend/node_modules/.bin/rollup -c -w",
+        "watch_count": 1
+      },
+      {
+        "pid": 3590567,
+        "name": "node",
+        "cmdline": "node /home/tom/git/svelte_test/backend/node_modules/.bin/nodemon src/index.js",
+        "watch_count": 1
+      },
+      {
+        "pid": 3529371,
+        "name": "WebKitNetworkProcess",
+        "cmdline": "/usr/lib/x86_64-linux-gnu/webkit2gtk-4.0/WebKitNetworkProcess 9 20",
+        "watch_count": 1
+      },
+      {
+        "pid": 3528903,
+        "name": "bambustu_main",
+        "cmdline": "/tmp/.mount_Bambu_FvHY8h/bin/bambu-studio",
+        "watch_count": 1
+      },
+      {
+        "pid": 3438896,
+        "name": "node",
+        "cmdline": "node /home/tom/git/svelte_test/frontend/node_modules/.bin/rollup -c -w",
+        "watch_count": 1
+      },
+      {
+        "pid": 3051966,
+        "name": "windsurf",
+        "cmdline": "/usr/share/windsurf/windsurf --max-old-space-size=3072 /usr/share/windsurf/resources/app/extensions/node_modules/typescript/lib/tsserver.js --useInferredProjectPerProjectRoot --enableTelemetry --cancellationPipeName /tmp/vscode-typescript1000/a5fe0886a2e610b1fa45/tscancellation-8172a7d33491060476e3.tmp* --locale en --noGetErrOnBackgroundUpdate --validateDefaultNpmLocation --useNodeIpc",
+        "watch_count": 1
+      },
+      {
+        "pid": 3051946,
+        "name": "windsurf",
+        "cmdline": "/usr/share/windsurf/windsurf --max-old-space-size=3072 /usr/share/windsurf/resources/app/extensions/node_modules/typescript/lib/tsserver.js --useInferredProjectPerProjectRoot --enableTelemetry --cancellationPipeName /tmp/vscode-typescript1000/dacad54161fa59857a87/tscancellation-6b1c8a9cc69d13bf9139.tmp* --locale en --noGetErrOnBackgroundUpdate --validateDefaultNpmLocation --useNodeIpc",
+        "watch_count": 1
+      },
+      {
+        "pid": 2768914,
+        "name": "kwalletd5",
+        "cmdline": "/usr/bin/kwalletd5",
+        "watch_count": 1
+      },
+      {
+        "pid": 2766,
+        "name": "dbus-daemon",
+        "cmdline": "/usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only",
+        "watch_count": 1
+      },
+      {
+        "pid": 2761,
+        "name": "syncthing",
+        "cmdline": "/usr/bin/syncthing serve --no-browser --no-restart --logflags=0",
+        "watch_count": 1
+      },
+      {
+        "pid": 22274,
+        "name": "kwalletd5",
+        "cmdline": "/usr/bin/kwalletd5",
+        "watch_count": 1
+      },
+      {
+        "pid": 22272,
+        "name": "dbus-daemon",
+        "cmdline": "/usr/bin/dbus-daemon --syslog-only --fork --print-pid 5 --print-address 7 --session",
+        "watch_count": 1
+      },
+      {
+        "pid": 2215054,
+        "name": "language_server_linux_x64",
+        "cmdline": "/usr/share/windsurf/resources/app/extensions/windsurf/bin/language_server_linux_x64 --api_server_url https://server.codeium.com --run_child --enable_lsp --extension_server_port 35337 --ide_name windsurf --random_port --inference_api_server_url https://inference.codeium.com --database_dir /home/tom/.codeium/windsurf/database/9c0694567290725d9dcba14ade58e297 --enable_index_service --enable_local_search --search_max_workspace_file_count 5000 --indexed_files_retention_period_days 30 --workspace_id file_home_tom_git_svelte_test --sentry_telemetry --sentry_environment stable --codeium_dir .codeium/windsurf --parent_pipe_path /tmp/server_4f74eaf5e57b537b --windsurf_version 1.3.11",
+        "watch_count": 1
+      },
+      {
+        "pid": 2175997,
+        "name": "language_server_linux_x64",
+        "cmdline": "/usr/share/windsurf/resources/app/extensions/windsurf/bin/language_server_linux_x64 --api_server_url https://server.codeium.com --run_child --enable_lsp --extension_server_port 34213 --ide_name windsurf --random_port --inference_api_server_url https://inference.codeium.com --database_dir /home/tom/.codeium/windsurf/database/9c0694567290725d9dcba14ade58e297 --enable_index_service --enable_local_search --search_max_workspace_file_count 5000 --indexed_files_retention_period_days 30 --workspace_id file_home_tom_git_autodev_2 --sentry_telemetry --sentry_environment stable --codeium_dir .codeium/windsurf --parent_pipe_path /tmp/server_8c5023e421e581a0 --windsurf_version 1.3.11",
+        "watch_count": 1
+      },
+      {
+        "pid": 1962417,
+        "name": "gvfsd-trash",
+        "cmdline": "/usr/libexec/gvfsd-trash --spawner :1.9 /org/gtk/gvfs/exec_spaw/0",
+        "watch_count": 1
+      },
+      {
+        "pid": 1680410,
+        "name": "chrome",
+        "cmdline": "/snap/chromium/3051/usr/lib/chromium-browser/chrome --type=utility --utility-sub-type=network.mojom.NetworkService --lang=en-US --service-sandbox-type=none --string-annotations --crashpad-handler-pid=1680077 --enable-crash-reporter=,snap --change-stack-guard-on-fork=enable --shared-files=v8_context_snapshot_data:100 --field-trial-handle=3,i,6452232860337284713,8380425743843801965,262144 --disable-features=TFLiteLanguageDetectionEnabled --variations-seed-version",
+        "watch_count": 1
+      }
+    ]
+  },
+  "filesystem_info": {
+    "path": "/tmp",
+    "filesystem_type": "ext4",
+    "total_space_gb": 1758.8579597473145,
+    "free_space_gb": 177.7906723022461,
+    "inodes_total": 117178368,
+    "inodes_free": 95339659,
+    "max_filename_length": 255
+  },
+  "event_monitoring": {
+    "status": "ok",
+    "events_detected": 82,
+    "event_types": [],
+    "avg_latency_ms": -0.001036585365853659
+  },
+  "library_tests": {
+    "watchdog": {
+      "status": "success",
+      "events_detected": 52,
+      "events_missed": 0,
+      "operations": [
+        {
+          "timestamp": "2025-03-08 02:47:34.506425",
+          "type": "create",
+          "path": "/tmp/watchdog_test_vuewujrgul/test_yqjiaqzcpt.txt"
+        },
+        {
+          "timestamp": "2025-03-08 02:47:35.007522",
+          "type": "modify",
+          "path": "/tmp/watchdog_test_vuewujrgul/test_yqjiaqzcpt.txt"
+        },
+        {
+          "timestamp": "2025-03-08 02:47:35.508427",
+          "type": "delete",
+          "path": "/tmp/watchdog_test_vuewujrgul/test_yqjiaqzcpt.txt"
+        },
+        {
+          "timestamp": "2025-03-08 02:47:36.009713",
+          "type": "create",
+          "path": "/tmp/watchdog_test_vuewujrgul/test_hakcszvote.txt"
+        },
+        {
+          "timestamp": "2025-03-08 02:47:36.511488",
+          "type": "modify",
+          "path": "/tmp/watchdog_test_vuewujrgul/test_hakcszvote.txt"
+        },
+        {
+          "timestamp": "2025-03-08 02:47:37.011904",
+          "type": "delete",
+          "path": "/tmp/watchdog_test_vuewujrgul/test_hakcszvote.txt"
+        },
+        {
+          "timestamp": "2025-03-08 02:47:37.513179",
+          "type": "create",
+          "path": "/tmp/watchdog_test_vuewujrgul/test_tguoybrdsc.txt"
+        },
+        {
+          "timestamp": "2025-03-08 02:47:38.015490",
+          "type": "modify",
+          "path": "/tmp/watchdog_test_vuewujrgul/test_tguoybrdsc.txt"
+        },
+        {
+          "timestamp": "2025-03-08 02:47:38.515873",
+          "type": "delete",
+          "path": "/tmp/watchdog_test_vuewujrgul/test_tguoybrdsc.txt"
+        },
+        {
+          "timestamp": "2025-03-08 02:47:39.016716",
+          "type": "create",
+          "path": "/tmp/watchdog_test_vuewujrgul/test_uoceeohpxz.txt"
+        },
+        {
+          "timestamp": "2025-03-08 02:47:39.517626",
+          "type": "modify",
+          "path": "/tmp/watchdog_test_vuewujrgul/test_uoceeohpxz.txt"
+        },
+        {
+          "timestamp": "2025-03-08 02:47:40.017842",
+          "type": "delete",
+          "path": "/tmp/watchdog_test_vuewujrgul/test_uoceeohpxz.txt"
+        }
+      ],
+      "errors": [],
+      "duration_seconds": 7.040525
+    },
+    "pyinotify": {
+      "status": "success",
+      "events_detected": 36,
+      "events_missed": 0,
+      "operations": [
+        {
+          "timestamp": "2025-03-08 02:47:41.540774",
+          "type": "create",
+          "path": "/tmp/pyinotify_test_dvefbdiitc/test_mxlusdohoe.txt"
+        },
+        {
+          "timestamp": "2025-03-08 02:47:42.084951",
+          "type": "modify",
+          "path": "/tmp/pyinotify_test_dvefbdiitc/test_mxlusdohoe.txt"
+        },
+        {
+          "timestamp": "2025-03-08 02:47:42.585704",
+          "type": "delete",
+          "path": "/tmp/pyinotify_test_dvefbdiitc/test_mxlusdohoe.txt"
+        },
+        {
+          "timestamp": "2025-03-08 02:47:43.086730",
+          "type": "create",
+          "path": "/tmp/pyinotify_test_dvefbdiitc/test_dxhchwriwl.txt"
+        },
+        {
+          "timestamp": "2025-03-08 02:47:43.587678",
+          "type": "modify",
+          "path": "/tmp/pyinotify_test_dvefbdiitc/test_dxhchwriwl.txt"
+        },
+        {
+          "timestamp": "2025-03-08 02:47:44.088483",
+          "type": "delete",
+          "path": "/tmp/pyinotify_test_dvefbdiitc/test_dxhchwriwl.txt"
+        },
+        {
+          "timestamp": "2025-03-08 02:47:44.589288",
+          "type": "create",
+          "path": "/tmp/pyinotify_test_dvefbdiitc/test_hiyvoavqwc.txt"
+        },
+        {
+          "timestamp": "2025-03-08 02:47:45.090296",
+          "type": "modify",
+          "path": "/tmp/pyinotify_test_dvefbdiitc/test_hiyvoavqwc.txt"
+        },
+        {
+          "timestamp": "2025-03-08 02:47:45.590593",
+          "type": "delete",
+          "path": "/tmp/pyinotify_test_dvefbdiitc/test_hiyvoavqwc.txt"
+        },
+        {
+          "timestamp": "2025-03-08 02:47:46.091580",
+          "type": "create",
+          "path": "/tmp/pyinotify_test_dvefbdiitc/test_vwclqddrex.txt"
+        },
+        {
+          "timestamp": "2025-03-08 02:47:46.593048",
+          "type": "modify",
+          "path": "/tmp/pyinotify_test_dvefbdiitc/test_vwclqddrex.txt"
+        },
+        {
+          "timestamp": "2025-03-08 02:47:47.093313",
+          "type": "delete",
+          "path": "/tmp/pyinotify_test_dvefbdiitc/test_vwclqddrex.txt"
+        }
+      ],
+      "errors": [],
+      "duration_seconds": 7.062373
+    }
+  }
+}

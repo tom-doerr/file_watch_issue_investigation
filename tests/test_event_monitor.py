@@ -92,37 +92,32 @@ def test_event_collector_get_stats():
     
     # Get stats before starting
     stats = collector.get_stats()
-    assert stats["running"] == False
-    assert stats["start_time"] is None
-    assert stats["stop_time"] is None
-    assert stats["duration_seconds"] is None
-    assert stats["events_count"] == 0
+    assert stats["status"] == "not_started"
     
     # Start the collector
-    collector.start("/tmp")
-    
-    # Add some events
-    collector.events.put({"event": 1})
-    collector.events.put({"event": 2})
-    
-    # Get stats after starting
-    stats = collector.get_stats()
-    assert stats["running"] == True
-    assert stats["start_time"] is not None
-    assert stats["stop_time"] is None
-    assert stats["duration_seconds"] is not None
-    assert stats["events_count"] == 2
-    
-    # Stop the collector
-    collector.stop()
+    with mock.patch("time.time", side_effect=[100, 105]):
+        collector.start("/tmp")
+        
+        # Add some events
+        collector.events.put({"event": 1})
+        collector.events.put({"event": 2})
+        
+        # Get stats while running
+        with mock.patch.object(collector, "get_events", return_value=[{"event": 1}, {"event": 2}]):
+            stats = collector.get_stats()
+            assert stats["status"] == "running"
+            assert "duration_seconds" in stats
+            assert stats["event_count"] == 2
+        
+        # Stop the collector
+        collector.stop()
     
     # Get stats after stopping
-    stats = collector.get_stats()
-    assert stats["running"] == False
-    assert stats["start_time"] is not None
-    assert stats["stop_time"] is not None
-    assert stats["duration_seconds"] is not None
-    assert stats["events_count"] == 2
+    with mock.patch.object(collector, "get_events", return_value=[{"event": 1}, {"event": 2}]):
+        stats = collector.get_stats()
+        assert stats["status"] == "stopped"
+        assert "duration_seconds" in stats
+        assert stats["event_count"] == 2
 
 
 def test_create_event_collector():

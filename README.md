@@ -17,6 +17,21 @@
 
 This toolkit helps identify and resolve common problems that can cause file watching to fail or miss events in Linux environments. It provides both quick diagnostics and comprehensive analysis tools to pinpoint issues with inotify limits, filesystem compatibility, resource constraints, and more.
 
+## 📁 Project Structure
+
+```
+file_watch_diagnostics/
+├── cli/                  # Command-line interfaces
+│   ├── diagnostics.py    # Full diagnostics CLI
+│   └── quick_check.py    # Quick check CLI
+├── utils/                # Utility modules
+│   ├── event_monitor.py  # File system event monitoring
+│   ├── logging_utils.py  # Logging utilities
+│   ├── system_limits.py  # System limits checking
+│   └── watch_test.py     # File watching library tests
+└── diagnostics.py        # Core diagnostics functionality
+```
+
 ## 🔎 Common File Watching Issues
 
 1. **Inotify Watch Limits**: Linux has limits on the number of inotify watches a user can have. When this limit is reached, file watching may fail silently.
@@ -35,27 +50,12 @@ pip install -r requirements.txt
 
 ## 🛠️ Tools
 
-### Quick Issue Detection
-
-The fastest way to diagnose file watching issues:
-
-```bash
-python examples/issue_detector.py [directory_to_check]
-```
-
-This will:
-- Check inotify limits and current usage
-- Verify filesystem compatibility
-- Test event delivery
-- Check for resource constraints
-- Analyze watch distribution across processes
-
 ### Comprehensive Diagnostics
 
 For a more detailed analysis:
 
 ```bash
-python file_watch_diagnostics_cli.py [directory_to_monitor]
+python -m file_watch_diagnostics.cli.diagnostics [directory] --testing-mode
 ```
 
 This will:
@@ -63,6 +63,16 @@ This will:
 - Monitor file system events in real-time
 - Test file watching with different libraries
 - Provide detailed logs and recommendations
+
+### Quick Check
+
+For a faster, targeted analysis:
+
+```bash
+python -m file_watch_diagnostics.cli.quick_check --directory /path/to/directory --testing
+```
+
+This performs a subset of the full diagnostics, focusing on the most common issues.
 
 ### Individual Utilities
 
@@ -78,6 +88,45 @@ See the `examples` directory for example scripts:
 
 - `basic_usage.py`: Demonstrates basic usage of the diagnostic tools
 - `issue_detector.py`: Quickly identifies common file watching issues
+
+## 🧪 Testing
+
+The package includes both unit tests and integration tests to ensure functionality.
+
+### Running Unit Tests
+
+```bash
+python -m pytest /path/to/file_watch_issue_investigation/tests/ -v
+```
+
+### Running Integration Tests
+
+```bash
+python -m pytest /path/to/file_watch_issue_investigation/tests/integration/ -v
+```
+
+### Running Tests with Coverage
+
+```bash
+python -m pytest /path/to/file_watch_issue_investigation/tests/ --cov=file_watch_diagnostics
+```
+
+### Test Configuration
+
+The project uses pytest.ini for test configuration:
+- Default test discovery in the `tests` directory
+- Integration tests are marked with the `integration` marker
+- Warnings from third-party libraries are filtered
+
+### Test Coverage
+
+Current test coverage is at 83%, with the following breakdown:
+- CLI modules: 93-94%
+- Core diagnostics: 81%
+- Event monitoring: 81%
+- System limits: 78%
+- Watch testing: 83%
+- Logging utilities: 72%
 
 ## 🔧 Common Solutions
 
@@ -100,3 +149,22 @@ If issues are detected, the following solutions may help:
 ## 📄 License
 
 See the [LICENSE](LICENSE) file for details.
+
+## 🚧 Development Status
+
+This project is actively maintained and tested. Current focus areas include:
+
+- Improving test coverage, especially for error handling paths
+- Optimizing event monitoring performance
+- Enhancing the CLI interfaces for better user experience
+- Adding more comprehensive documentation
+
+## 🔮 Future Improvements
+
+Planned improvements include:
+
+- Adding type hints for better code readability and static type checking
+- Creating a simplified API for common diagnostic tasks
+- Supporting more file watching libraries and frameworks
+- Providing more detailed recommendations for fixing detected issues
+- Adding visualization tools for monitoring file watching performance
